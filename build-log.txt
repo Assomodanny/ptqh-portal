@@ -1,0 +1,26 @@
+
+> build
+> vite build
+
+[33mThe plugin "vite-tsconfig-paths" is detected. Vite now supports tsconfig paths resolution natively via the [1mresolve.tsconfigPaths[22m option. You can remove the plugin and set [1mresolve.tsconfigPaths: true[22m in your Vite config instead.[39m
+[36mvite v8.1.5 [32mbuilding client environment for production...[36m[39m
+[2Ktransforming...[31m✗[39m Build failed in 4.78s
+[31merror during build:
+Error: Unable to write the service worker file. 'C:\Users\LENOVO\AppData\Local\Temp\9b64cc7fc6be1c3ecad7f782626c05ca\sw.js: Missing semicolon. (1:98)
+
+[0m[31m[1m>[22m[31m[90m 1 |[31m [36mimport[31m {registerRoute [36mas[31m workbox_routing_registerRoute} [36mfrom[31m [32m'C:/Users/LENOVO/Desktop/path-to qur'[31man[33m-[31mportal[33m/[31mnode_modules[33m/[31mworkbox[33m-[31mrouting[33m/[31mregisterRoute[33m.[31mmjs[32m';[31m
+ [90m   |[31m                                                                                                   [31m[1m^[22m[31m
+ [90m 2 |[31m [36mimport[31m {[33mNetworkFirst[31m [36mas[31m workbox_strategies_NetworkFirst} [36mfrom[31m [32m'C:/Users/LENOVO/Desktop/path-to qur'[31man[33m-[31mportal[33m/[31mnode_modules[33m/[31mworkbox[33m-[31mstrategies[33m/[31m[33mNetworkFirst[31m[33m.[31mmjs[32m';[31m
+ [90m 3 |[31m [36mimport[31m {[33mExpirationPlugin[31m [36mas[31m workbox_expiration_ExpirationPlugin} [36mfrom[31m [32m'C:/Users/LENOVO/Desktop/path-to qur'[31man[33m-[31mportal[33m/[31mnode_modules[33m/[31mworkbox[33m-[31mexpiration[33m/[31m[33mExpirationPlugin[31m[33m.[31mmjs[32m';[31m
+ [90m 4 |[31m [36mimport[31m {[33mCacheFirst[31m [36mas[31m workbox_strategies_CacheFirst} [36mfrom[31m [32m'C:/Users/LENOVO/Desktop/path-to qur'[31man[33m-[31mportal[33m/[31mnode_modules[33m/[31mworkbox[33m-[31mstrategies[33m/[31m[33mCacheFirst[31m[33m.[31mmjs[32m';[31m[0m'
+    at writeSWUsingDefaultTemplate (C:\Users\LENOVO\Desktop\path-to qur'an-portal\node_modules\workbox-build\build\lib\write-sw-using-default-template.js:68:15)
+    at async generateSW (C:\Users\LENOVO\Desktop\path-to qur'an-portal\node_modules\workbox-build\build\generate-sw.js:95:23)
+    at async generateServiceWorker (file:///C:/Users/LENOVO/Desktop/path-to%20qur'an-portal/node_modules/vite-plugin-pwa/dist/index.js:208:23)
+    at async _generateSW (file:///C:/Users/LENOVO/Desktop/path-to%20qur'an-portal/node_modules/vite-plugin-pwa/dist/index.js:234:5)
+    at async PluginContextImpl.handler (file:///C:/Users/LENOVO/Desktop/path-to%20qur'an-portal/node_modules/vite-plugin-pwa/dist/index.js:427:13)
+    at async plugin (file:///C:/Users/LENOVO/Desktop/path-to%20qur'an-portal/node_modules/rolldown/dist/shared/bindingify-input-options-EnUlEF0T.mjs:1721:3)
+    at async plugin.<computed> (file:///C:/Users/LENOVO/Desktop/path-to%20qur'an-portal/node_modules/rolldown/dist/shared/bindingify-input-options-EnUlEF0T.mjs:1906:12) {
+  code: 'PLUGIN_ERROR',
+  plugin: 'vite-plugin-pwa:build',
+  hook: 'closeBundle'
+}[39m

@@ -1,0 +1,6 @@
+{
+  "name": "Path to Qur'anic Understanding",
+  "description": "School portal for Path to Qur'anic Understanding — structured classical Islamic sciences curriculum, live classes, quizzes, and student/teacher/admin records.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

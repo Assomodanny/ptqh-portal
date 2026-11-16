@@ -1,0 +1,163 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system — Path to Qur'anic Understanding.
+ * Near-black ground, deep indigo→violet hero gradient, warm amber accent,
+ * warm off-white body copy with pure-white headlines.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 8px);
+  --radius-2xl: calc(var(--radius) + 12px);
+  --radius-3xl: calc(var(--radius) + 16px);
+  --radius-4xl: calc(var(--radius) + 20px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-amber: var(--amber);
+  --color-amber-soft: var(--amber-soft);
+  --color-headline: var(--headline);
+  --color-indigo-deep: var(--indigo-deep);
+  --color-violet-deep: var(--violet-deep);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-display: "Spectral", "Source Serif 4", Georgia, serif;
+  --font-body: "Spectral", Georgia, serif;
+  --font-arabic: "Amiri", "Scheherazade New", serif;
+}
+
+:root {
+  --radius: 0.5rem;
+
+  --background: #08070b;
+  --foreground: #e8e2d6;
+  --headline: #ffffff;
+  --card: #100f16;
+  --card-foreground: #e8e2d6;
+  --popover: #14121b;
+  --popover-foreground: #e8e2d6;
+
+  --amber: #e0a63c;
+  --amber-soft: #f0c06a;
+  --indigo-deep: #1b1c4b;
+  --violet-deep: #2c1f52;
+
+  --primary: #e0a63c;
+  --primary-foreground: #14100a;
+  --secondary: #17161f;
+  --secondary-foreground: #e8e2d6;
+  --muted: #17161f;
+  --muted-foreground: #a8a294;
+  --accent: #1c1a26;
+  --accent-foreground: #ffffff;
+  --destructive: #e0645c;
+  --destructive-foreground: #14100a;
+  --border: color-mix(in oklab, #e8e2d6 14%, transparent);
+  --input: color-mix(in oklab, #e8e2d6 20%, transparent);
+  --ring: #e0a63c;
+
+  --sidebar: #100f16;
+  --sidebar-foreground: #e8e2d6;
+  --sidebar-primary: #e0a63c;
+  --sidebar-primary-foreground: #14100a;
+  --sidebar-accent: #1c1a26;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: color-mix(in oklab, #e8e2d6 14%, transparent);
+  --sidebar-ring: #e0a63c;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    color: var(--headline);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 3px;
+  }
+}
+
+@utility font-arabic {
+  font-family: var(--font-arabic);
+}
+
+/* Deep indigo → violet → near-black hero ground. */
+@utility hero-gradient {
+  background:
+    radial-gradient(
+      120% 90% at 20% 0%,
+      color-mix(in oklab, var(--indigo-deep) 92%, transparent),
+      transparent 62%
+    ),
+    radial-gradient(
+      110% 85% at 85% 10%,
+      color-mix(in oklab, var(--violet-deep) 85%, transparent),
+      transparent 60%
+    ),
+    linear-gradient(to bottom, #171a44 0%, #211a45 38%, #0d0b16 78%, var(--background) 100%);
+}
+
+@utility hairline {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    color-mix(in oklab, var(--amber) 50%, transparent),
+    transparent
+  );
+}
